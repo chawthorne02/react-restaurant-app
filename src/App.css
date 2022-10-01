@@ -3,6 +3,15 @@ span.navbar-brand {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   color: rgb(253, 246, 246);
   margin-left: 45px;
+  text-decoration: none;
+}
+
+nav {
+  display: contents;
+}
+
+a.navbar-brand:hover {
+  text-decoration: underline;
 }
 
 div.container-fluid {
@@ -20,5 +29,17 @@ a.nav-link {
 }
 
 a.nav-link:hover {
+  text-decoration: underline;
+}
+
+Button{
+  background-color: #3936f0;
+  color: rgb(253, 246, 246);
+  border-style: none;
+  font-size: larger;
+}
+
+Button:hover {
+  cursor: pointer;
   text-decoration: underline;
 }
