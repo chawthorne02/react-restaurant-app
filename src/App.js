@@ -28,8 +28,8 @@ function App() {
     <Navbar>
     <Container fluid>
     {/* <img src={pancakes} alt='logo' /> */}
-      <Navbar.Brand classname="title">The Brunch Spot</Navbar.Brand>
-        <Nav classname="navigation">
+      <Navbar.Brand className="title">The Brunch Spot</Navbar.Brand>
+        <Nav className="navigation">
             <Button
               variant="primary"
               type="button"

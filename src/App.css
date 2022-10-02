@@ -56,3 +56,7 @@ div.container-md {
   color: rgb(253, 246, 246);
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
+
+.menu-img {
+  height: 300px;
+}
