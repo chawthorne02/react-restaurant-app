@@ -14,12 +14,12 @@ function MenuList() {
     
     return (
      <section className="menu">
-        <div>
-            <ul>
+        <div className="menu-side">
+            <ul className="menu-cards">
                 <MenuItems />
             </ul>
         </div>
-        <div>
+        <div className="checkout-side">
             <Checkout />
         </div>
      </section>

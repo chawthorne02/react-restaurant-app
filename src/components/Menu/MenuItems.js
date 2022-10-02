@@ -71,13 +71,14 @@ function MenuItems() {
   
   const menuList = menuItem.map(entree => {
     return (
+      
       <li key={entree.id} className="card-li">
       <Card className="card">
         <Card.Img className="menu-img" variant="top" src={entree.img} />
         <Card.Body className="card-body">
           <Card.Title>{entree.title}</Card.Title>
           <p>{entree.price}</p>
-          <Button type="button">
+          <Button type="button" className='order-btn'>
             Add to Order
           </Button>
         </Card.Body>

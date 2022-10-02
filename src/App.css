@@ -59,4 +59,28 @@ div.container-md {
 
 .menu-img {
   height: 300px;
+  width: 100%;
 }
+
+.menu-side {
+  width: 600px;
+}
+
+.menu-cards {
+  display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    list-style-type: none;
+    column-gap: 10px;
+    row-gap: 10px;
+}
+
+.card-li {
+  border: solid 2px #fff;
+  background-color: #fff;
+}
+
+.order-btn {
+  border-radius: 10px;
+}
+
