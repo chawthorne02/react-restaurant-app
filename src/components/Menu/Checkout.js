@@ -1,12 +1,51 @@
+import React from 'react';
+import { useState } from "react";
+import Card from 'react-bootstrap/Card';
+// import INITIAL_ITEMS from './Menu';
 
 
 
-function Checkout() { 
+
+
+
+function OrderItems(props) {
+  
+  
+  
+  const [orderItem, setOrderItem] = useState(props.usercolor);
+  
+
+  
+  
+  
+  
+  const orderList = orderItem.map(order => {
     return (
-     <div>checkout</div>
+      
+      <li key={order.id} className="card-li">
+      <Card className="card">
+        <Card.Body className="card-body">
+          <Card.Title>{order.title}</Card.Title>
+          <p>{order.price}</p>
+        </Card.Body>
+      </Card>
+    </li>
+    )
+  })
+    
+  return (
+    <>
+     {orderList} 
+     </>
     );
   }
 
 
 
-  export default Checkout;
+
+
+
+
+
+
+  export default OrderItems;

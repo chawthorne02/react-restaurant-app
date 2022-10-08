@@ -45,7 +45,8 @@ Button{
 
 Button:hover {
   cursor: pointer;
-  text-decoration: underline;
+  background-color: #fff;
+  color: #3936f0;
 }
 
 div.container-md {
@@ -57,13 +58,28 @@ div.container-md {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
+.welcome-container {
+ border: solid 1px  #3936f0;
+ margin-top: 65px;
+ background-color: #3936f0;
+ border-radius: 25px;
+ padding: 60px;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  
+}
+
 .menu-img {
   height: 300px;
   width: 100%;
 }
 
 .menu-side {
-  width: 600px;
+  width: 702px;
+  display: flex;
 }
 
 .menu-cards {
@@ -84,3 +100,55 @@ div.container-md {
   border-radius: 10px;
 }
 
+.filter-btns {
+  display: flex;
+  justify-content: center;
+  margin-top: 34px;
+  gap: 15px;
+}
+
+.all-btn {
+  padding: 19px 55px 19px 55px;
+  border-radius: 30px;
+}
+
+.lunch-btn {
+  padding: 19px 55px 19px 55px;
+  border-radius: 30px;
+}
+
+.breakfast-btn {
+  padding: 19px 55px 19px 55px;
+  border-radius: 30px;
+}
+
+.contact-us {
+  display: flex;
+  justify-content: center;
+}
+
+.contact-us>img {
+  height: 100vh;
+  opacity: .3;
+  position: relative;
+  width: 100vw;
+}
+
+.contact-info {
+  align-items: center;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.contact-info>h2 {
+  margin-bottom: 30px;
+  margin-top: 50%;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.contact-info>p {
+  padding: 20px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}

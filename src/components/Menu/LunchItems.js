@@ -2,7 +2,6 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 // import INITIAL_ITEMS from './Menu';
 import { useState } from 'react';
-import Checkout from './Checkout';
 
 
 
@@ -64,21 +63,18 @@ const INITIAL_ITEMS = [{
 }
 ]
 
-const INITIAL_ORDER = [
-
-
-
-
-
-]
-
-
-function addMenuItem(identifier){
-  console.log(INITIAL_ITEMS[identifier - 1])
-  INITIAL_ORDER.push(INITIAL_ITEMS[identifier - 1])
+function handleEvent(){
+  const breakfast = INITIAL_ITEMS.filter(item => {
+    return item.tag === 'Breakfast';
+  });
+  const lunch = INITIAL_ITEMS.filter(item => {
+    return item.tag === 'Lunch';
+  });
+    console.log(breakfast)
+    console.log(lunch)
 }
 
-function MenuItems(props) {
+function LunchItems() {
   
   
   
@@ -93,13 +89,13 @@ function MenuItems(props) {
   const addOrder = (newEntree) => {
     setMenuItem([newEntree, ...menuItem]);
   };
-  
+
 
   
   
   
   
-  const menuList = menuItem.map(entree => {
+  const menuList = lunch.map(entree => {
     return (
       
       <li key={entree.id} className="card-li">
@@ -108,7 +104,7 @@ function MenuItems(props) {
         <Card.Body className="card-body">
           <Card.Title>{entree.title}</Card.Title>
           <p>{entree.price}</p>
-          <Button type="button" className='order-btn' onClick={() => addMenuItem(entree.id)}>
+          <Button type="button" className='order-btn' onClick={handleEvent}>
             Add to Order
           </Button>
         </Card.Body>
@@ -119,14 +115,9 @@ function MenuItems(props) {
     
   return (
     <>
-     {menuList}
-     <div className="checkout-side">
-            <Checkout usercolor={INITIAL_ITEMS}/>
-            
-        </div> 
+     {menuList} 
      </>
     );
-  
   }
 
 
@@ -137,4 +128,4 @@ function MenuItems(props) {
 
 
 
-  export default MenuItems;
+  export default LunchItems;
