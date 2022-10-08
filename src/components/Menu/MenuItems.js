@@ -64,13 +64,13 @@ const INITIAL_ITEMS = [{
 }
 ]
 
-const INITIAL_ORDER = [
+const INITIAL_ORDER = [];
 
 
 
 
 
-]
+
 
 
 function addMenuItem(identifier){
@@ -121,7 +121,7 @@ function MenuItems(props) {
     <>
      {menuList}
      <div className="checkout-side">
-            <Checkout usercolor={INITIAL_ITEMS}/>
+            <Checkout usercolor={INITIAL_ORDER}/>
             
         </div> 
      </>

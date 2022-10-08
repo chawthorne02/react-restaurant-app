@@ -19,10 +19,16 @@ function OrderItems(props) {
   
   
   
-  const orderList = orderItem.map(order => {
+//   const orderList = orderItem.map( ( {title} ) => {
+//     return <p key={title}>{title}</p>
+// })
+
+  
+  
+const orderList = orderItem.map(order => {
     return (
       
-      <li key={order.id} className="card-li">
+      <li key={order.title} className="card-li">
       <Card className="card">
         <Card.Body className="card-body">
           <Card.Title>{order.title}</Card.Title>
