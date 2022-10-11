@@ -1,6 +1,11 @@
 import React from 'react';
 import { useState } from "react";
 import Card from 'react-bootstrap/Card';
+import Accordion from 'react-bootstrap/Accordion';
+import Button from 'react-bootstrap/Button';
+import Badge from 'react-bootstrap/Badge';
+
+
 // import INITIAL_ITEMS from './Menu';
 
 
@@ -12,7 +17,7 @@ function OrderItems(props) {
   
   
   
-  const [orderItem, setOrderItem] = useState(props.usercolor);
+  // const [orderItems, setOrderItem] = useState([...props.orderItems]);
   
 
   
@@ -25,17 +30,19 @@ function OrderItems(props) {
 
   
   
-const orderList = orderItem.map(order => {
+const orderList = props.orderItems.map(order => {
     return (
       
-      <li key={order.title} className="card-li">
-      <Card className="card">
-        <Card.Body className="card-body">
-          <Card.Title>{order.title}</Card.Title>
-          <p>{order.price}</p>
-        </Card.Body>
-      </Card>
-    </li>
+      <div key={order.title} className="accordion-li">
+    <Accordion className="order" defaultActiveKey="0">
+      <Accordion.Item eventKey="1">
+        <Accordion.Body>
+        <span className='title'>{order.title}</span>
+        <span className='price'>{order.price}</span>
+        </Accordion.Body>
+        </Accordion.Item>
+    </Accordion>
+    </div>
     )
   })
     

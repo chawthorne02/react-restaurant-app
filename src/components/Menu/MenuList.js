@@ -89,11 +89,11 @@ const displayLunch = () => {
         {/* {tagListHTML} */}
       </Nav>
         <div className="menu-side">
-            <ul className="menu-cards">
+           
             
               {menuComponent}
             
-            </ul>
+
         </div>
         
        

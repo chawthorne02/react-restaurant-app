@@ -3,6 +3,8 @@ import Card from 'react-bootstrap/Card';
 // import INITIAL_ITEMS from './Menu';
 import { useState } from 'react';
 import Checkout from './Checkout';
+import OrderItems from './Checkout';
+import { nanoid } from "nanoid";
 
 
 
@@ -64,7 +66,7 @@ const INITIAL_ITEMS = [{
 }
 ]
 
-const INITIAL_ORDER = [];
+// const INITIAL_ORDER = [];
 
 
 
@@ -73,16 +75,15 @@ const INITIAL_ORDER = [];
 
 
 
-function addMenuItem(identifier){
-  console.log(INITIAL_ITEMS[identifier - 1])
-  INITIAL_ORDER.push(INITIAL_ITEMS[identifier - 1])
-}
 
 function MenuItems(props) {
   
   
   
   const [menuItem, setMenuItem] = useState(INITIAL_ITEMS);
+  const [orderItems, setOrderItems] = useState([]);
+
+
   const breakfast = INITIAL_ITEMS.filter(item => {
     return item.tag === 'Breakfast';
   });
@@ -90,12 +91,16 @@ function MenuItems(props) {
     return item.tag === 'Lunch';
   });
   
-  const addOrder = (newEntree) => {
-    setMenuItem([newEntree, ...menuItem]);
-  };
+  // const addOrder = (newEntree) => {
+  //   setMenuItem([newEntree, ...menuItem]);
+  // };
   
 
-  
+  const addMenuItem = (id) => {
+    const index = menuItem.findIndex((entree) => entree.id === id);
+    const newOrderItem = menuItem[index];
+    setOrderItems([...orderItems, newOrderItem]);
+  };  
   
   
   
@@ -119,9 +124,14 @@ function MenuItems(props) {
     
   return (
     <>
+     <ul className="menu-cards">
+
      {menuList}
+     </ul>
+    
      <div className="checkout-side">
-            <Checkout usercolor={INITIAL_ORDER}/>
+           
+      <Checkout orderItems={orderItems}/>
             
         </div> 
      </>

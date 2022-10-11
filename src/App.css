@@ -78,8 +78,14 @@ div.container-md {
 }
 
 .menu-side {
-  width: 702px;
-  display: flex;
+ 
+  display: flex; 
+  display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    list-style-type: none;
+    column-gap: 10px;
+    row-gap: 10px;
 }
 
 .menu-cards {
@@ -89,6 +95,8 @@ div.container-md {
     list-style-type: none;
     column-gap: 10px;
     row-gap: 10px;
+    
+
 }
 
 .card-li {
@@ -151,4 +159,14 @@ div.container-md {
 .contact-info>p {
   padding: 20px;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+div.checkout-side {
+  margin-left: 40%;
+}
+
+.accordion-body {
+  display: flex;
+  justify-content: space-around;
+  
 }
