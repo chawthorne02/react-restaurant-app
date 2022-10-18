@@ -2,6 +2,9 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 // import INITIAL_ITEMS from './Menu';
 import { useState } from 'react';
+import Checkout from './Checkout';
+import OrderItems from './Checkout';
+import { nanoid } from "nanoid";
 
 
 
@@ -63,48 +66,54 @@ const INITIAL_ITEMS = [{
 }
 ]
 
-function handleEvent(){
+// const INITIAL_ORDER = [];
+
+
+
+
+
+
+
+
+
+function BreakfastItems(props) {
+  
+  
+  
+  const [menuItems, setMenuItems] = useState(INITIAL_ITEMS);
+  const [orderItems, setOrderItems] = useState([]);
+
+
   const breakfast = INITIAL_ITEMS.filter(item => {
     return item.tag === 'Breakfast';
   });
   const lunch = INITIAL_ITEMS.filter(item => {
     return item.tag === 'Lunch';
   });
-    console.log(breakfast)
-    console.log(lunch)
-}
+  
+  // const addOrder = (newEntree) => {
+  //   setMenuItem([newEntree, ...menuItem]);
+  // };
+  
 
-function BreakfastItems() {
+  const addMenuItem = (newOrderItem) => {
+    setOrderItems([...orderItems, newOrderItem]);
+  };  
   
-  
-  
-  const [menuItem, setMenuItem] = useState(INITIAL_ITEMS);
-  const breakfast = INITIAL_ITEMS.filter(item => {
-    return item.tag === 'Breakfast';
-  });
-  const lunch = INITIAL_ITEMS.filter(item => {
-    return item.tag === 'Lunch';
-  });
-  
-  const addOrder = (newEntree) => {
-    setMenuItem([newEntree, ...menuItem]);
-  };
+  const clearOrder = () => {
+    setOrderItems([])
+  }
 
-
-  
-  
-  
-  
   const menuList = breakfast.map(entree => {
     return (
       
-      <li key={entree.id} className="card-li">
+     <li key={entree.id} className="card-li">
       <Card className="card">
         <Card.Img className="menu-img" variant="top" src={entree.img} />
         <Card.Body className="card-body">
           <Card.Title>{entree.title}</Card.Title>
           <p>{entree.price}</p>
-          <Button type="button" className='order-btn' onClick={handleEvent}>
+          <Button type="button" className='order-btn' onClick={() => addMenuItem(entree)}>
             Add to Order
           </Button>
         </Card.Body>
@@ -115,9 +124,19 @@ function BreakfastItems() {
     
   return (
     <>
-     {menuList} 
+     <ul className="menu-cards">
+
+     {menuList}
+     </ul>
+    
+     <div className="checkout-side">
+           
+      <Checkout orderItems={orderItems} clearOrder={clearOrder}/>
+            
+        </div> 
      </>
     );
+  
   }
 
 

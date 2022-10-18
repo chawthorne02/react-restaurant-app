@@ -11,7 +11,9 @@ import Contact from './components/Contact/Contact';
 
 
 function App() { 
-  
+
+
+
   const [page, setPage] = useState("a");
   let content;
   if (page === "a") {
