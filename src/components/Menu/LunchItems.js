@@ -99,10 +99,6 @@ function LunchItems(props) {
   const addMenuItem = (newOrderItem) => {
     setOrderItems([...orderItems, newOrderItem]);
   };  
-  
-  const clearOrder = () => {
-    setOrderItems([])
-  }
 
   const menuList = lunch.map(entree => {
     return (
@@ -131,7 +127,7 @@ function LunchItems(props) {
     
      <div className="checkout-side">
            
-      <Checkout orderItems={orderItems} clearOrder={clearOrder}/>
+      <Checkout orderItems={orderItems} setOrderItems={setOrderItems}/>
             
         </div> 
      </>

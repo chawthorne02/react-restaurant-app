@@ -131,7 +131,7 @@ function MenuItems(props) {
     
      <div className="checkout-side">
            
-      <Checkout orderItems={orderItems} clearOrder={clearOrder}/>
+      <Checkout orderItems={orderItems} setOrderItems={setOrderItems}/>
             
         </div> 
      </>

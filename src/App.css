@@ -197,3 +197,13 @@ div.checkout-side {
   font-size: large;
   color: #fff;
 }
+
+@media (max-width: 768px) {
+  
+.menu-cards {
+  display: flex;
+  flex-direction: column;
+  
+}
+
+}
